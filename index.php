@@ -129,8 +129,15 @@
 
         <?php
 
-        var_dump(include __DIR__ . '/inc2.php');
+        var_dump(include(__DIR__ . '/inc2.php');
         echo ' Сегодня '.  $wether2 . ' и ' . $temperature2 ;
+
+        ?>
+        <br><i> Ещё пример:  </i><br>
+        <?php
+
+        $iinc = include(__DIR__ . '/inc2_1.php');
+        var_dump($iinc);
 
         ?>
 
@@ -138,20 +145,6 @@
             Исключением являются так называемые волшебные константы (например __DIR__)
         </i><br><br>
 
-        <?php
-        function foo2()
-        {
-            global $wether;
-            include 'inc1.php';
-            echo "Сегодня  $wether   и  $temperature ";
-        }
-        foo2();                  // Сегодня солнечно и тепло
-        echo "Сегодня  $wether и $temperature "; // Сегодня солнечно и
-/* Также выдаст предупреждение, что не определена переменная $temperature.
-Это происходит потому, что файл inc1.php включается внутри функции и переменная $temperature не может быть распознана за пределами функции.
-Переменная $wether внутри функции объявляется глобальной, опэтому она видна вне функции.
-*/
-        ?>
         <br><br><i> Ещё примеры:  </i><br><br>
 
         <?php
