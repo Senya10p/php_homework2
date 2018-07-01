@@ -26,7 +26,7 @@
         $b2 = false;
         $a3 = false;    //Задаём переменные для третей строки таблиц
         $b3 = true;
-        $a4 = true;     //Задаём переменные для второй строки таблиц
+        $a4 = true;     //Задаём переменные для четвёртой строки таблиц
         $b4 = true;
 
         // Затем выводим таблицы истинности. (int) используется для отображения таблиц аналогично таблицам из Википедии, ссылка на которую есть в задании.
@@ -37,28 +37,28 @@
                     <table border=1>
                         Таблица 1</br> (Логическое "И" &&)
                         <tr><td> a</td><td> b</td><td> &&</td>
-                        <tr><td> <?php echo (int)$a1?></td><td><?php echo (int)$b1?></td><td><?php echo (int)($a1&&$b1)?></td>
-                        <tr><td> <?php echo (int)$a2?></td><td> <?php echo (int)$b2?></td><td><?php echo (int)($a2&&$b2)?></td>
-                        <tr><td> <?php echo (int)$a3?></td><td> <?php echo (int)$b3?></td><td><?php echo (int)($a3&&$b3)?></td>
-                        <tr><td> <?php echo (int)$a4?></td><td> <?php echo (int)$b4?></td><td><?php echo (int)($a4&&$b4)?></td>
+                        <tr><td> <?php echo (int)$a1;?></td><td><?php echo (int)$b1;?></td><td><?php echo (int)($a1&&$b1);?></td>
+                        <tr><td> <?php echo (int)$a2;?></td><td> <?php echo (int)$b2;?></td><td><?php echo (int)($a2&&$b2);?></td>
+                        <tr><td> <?php echo (int)$a3;?></td><td> <?php echo (int)$b3;?></td><td><?php echo (int)($a3&&$b3);?></td>
+                        <tr><td> <?php echo (int)$a4;?></td><td> <?php echo (int)$b4;?></td><td><?php echo (int)($a4&&$b4);?></td>
                     </table>
 
                 <td><td><td><table border=1>
                         Таблица 2</br> (Логическое "ИЛИ" ||)
                         <tr><td> a</td><td> b</td><td> ||</td>
-                        <tr><td> <?php echo (int)$a1?></td><td><?php echo (int)$b1?></td><td><?php echo (int)($a1||$b1)?></td>
-                        <tr><td> <?php echo (int)$a2?></td><td> <?php echo (int)$b2?></td><td><?php echo (int)($a2||$b2)?></td>
-                        <tr><td> <?php echo (int)$a3?></td><td> <?php echo (int)$b3?></td><td><?php echo (int)($a3||$b3)?></td>
-                        <tr><td> <?php echo (int)$a4?></td><td> <?php echo (int)$b4?></td><td><?php echo (int)($a4||$b4)?></td>
+                        <tr><td> <?php echo (int)$a1;?></td><td><?php echo (int)$b1;?></td><td><?php echo (int)($a1||$b1);?></td>
+                        <tr><td> <?php echo (int)$a2;?></td><td> <?php echo (int)$b2;?></td><td><?php echo (int)($a2||$b2);?></td>
+                        <tr><td> <?php echo (int)$a3;?></td><td> <?php echo (int)$b3;?></td><td><?php echo (int)($a3||$b3);?></td>
+                        <tr><td> <?php echo (int)$a4;?></td><td> <?php echo (int)$b4;?></td><td><?php echo (int)($a4||$b4);?></td>
                     </table>
 
                 <td><td><td><table border=1>
                         Таблица 3</br> (Исключающее "ИЛИ" XOR)
                         <tr><td> a</td><td> b</td><td>xor</td>
-                        <tr><td> <?php echo (int)$a1?></td><td><?php echo (int)$b1?></td><td><?php echo (int)$c=($a1 xor $b1)?></td>
-                        <tr><td> <?php echo (int)$a2?></td><td> <?php echo (int)$b2?></td><td><?php echo (int)$c=($a2 xor $b2)?></td>
-                        <tr><td> <?php echo (int)$a3?></td><td> <?php echo (int)$b3?></td><td><?php echo (int)$c=($a3 xor $b3)?></td>
-                        <tr><td> <?php echo (int)$a4?></td><td> <?php echo (int)$b4?></td><td><?php echo (int)$c=($a4 xor $b4)?></td>
+                        <tr><td> <?php echo (int)$a1;?></td><td><?php echo (int)$b1;?></td><td><?php echo (int)($a1 xor $b1);?></td>
+                        <tr><td> <?php echo (int)$a2;?></td><td> <?php echo (int)$b2;?></td><td><?php echo (int)($a2 xor $b2);?></td>
+                        <tr><td> <?php echo (int)$a3;?></td><td> <?php echo (int)$b3;?></td><td><?php echo (int)($a3 xor $b3);?></td>
+                        <tr><td> <?php echo (int)$a4;?></td><td> <?php echo (int)$b4;?></td><td><?php echo (int)($a4 xor $b4);?></td>
                     </table>
 
         </table>
@@ -81,8 +81,10 @@
 
         function D($aa, $bb, $cc) {
 
-            return $d = $bb ** 2 - 4 * $aa * $cc;
+            return $bb ** 2 - 4 * $aa * $cc;
         }
+
+        $dd = D($aa, $bb, $cc);
 
         // Тестируем фунцкию дискриминанта
         assert(-3 == D(1, 1, 1));
@@ -94,23 +96,23 @@
         ?>
 
         <p>Решаем квадратное уравнение a*x<sup>2</sup> + b*x + c = 0</p>
-        <p>Где a =<?php echo $aa ?> ; b = <?php echo $bb ?>; c = <?php echo $cc ?></p>
+        <p>Где a =<?php echo $aa; ?> ; b = <?php echo $bb; ?>; c = <?php echo $cc; ?></p>
 
-        <p><?php echo $aa ?> * x<sup>2</sup> + <?php echo $bb ?> * x + <?php echo $cc ?> = 0</p>
+        <p><?php echo $aa; ?> * x<sup>2</sup> + <?php echo $bb; ?> * x + <?php echo $cc; ?> = 0</p>
 
-        <p>Находим дискриминант (по формуле D = b<sup>2</sup> - 4*a*c) : D = <?php echo D($aa,$bb,$cc) ?></p>
+        <p>Находим дискриминант (по формуле D = b<sup>2</sup> - 4*a*c) : D = <?php echo $dd; ?></p>
 
         <p>Находим корни квадратного уравнения</p>
         <?php
-        if (D($aa, $bb, $cc) > 0){
+        if ($dd > 0){
 
-            $xx1 = ((-$bb+sqrt(D($aa, $bb, $cc)))/2*$aa);
-            $xx2 = ((-$bb-sqrt(D($aa, $bb, $cc)))/2*$aa);
+            $xx1 = ((-$bb+sqrt($dd))/2*$aa);
+            $xx2 = ((-$bb-sqrt($dd))/2*$aa);
             echo 'Дискриминант больше нуля, значит уравнение имеет два корня: <br> 1) x1 = '. $xx1 .'<br>2) x2 = ' . $xx2;
         }
-        elseif (D($aa, $bb, $cc) == 0){
+        elseif ($dd == 0){
 
-            $xx1 = ((-$bb+sqrt(D($aa, $bb, $cc)))/2*$aa);
+            $xx1 = ((-$bb+sqrt($dd))/2*$aa);
             echo 'Дискриминант равен нулю, значит уравнение имеет один корень: <br> 1) x = '. $xx1 ;
         }
         else {
@@ -121,10 +123,22 @@
         <h5>3. Проведите самостоятельное исследование на тему "Что возвращает оператор include, если его использовать как функцию?".
             Используйте руководство по языку, составьте и приложите примеры, иллюстрирующие ваше исследование.</h5>
 
+        <br><i>
+            Функция принимает аргументы и возвращает результат.
+            include как функция в качестве аргумента принимает полное имя файла и возвращает то, что возвращает файл inc2-1.php.
+            Пример:  </i><br>
+        <?php
+        $iinc = include(__DIR__ . '/inc2-1.php');
+        echo $iinc;              //Возвращает результат выполнения всего php-кода из файла inc2-1.php
+        var_dump($iinc);
+        ?>
+
         <i> include включает и выполняет указанный файл. Когда файл включается, его код наследует ту же область видимости переменных, что и строка, на которой произошло включение.
         Все переменные, доступные во включающем файле, будут доступны во включаемом файле. Но все функции и классы, объявленные во включаемом файле, имеют глобальную обсласть видимости.
 
         Оператор include возвращает значение False при ошибке и выдаёт предупреждение. Успешное включение, пока это не определено во включаемом файле, возвращают значение 1.
+
+
         </i><br><br>
 
         <?php
@@ -133,13 +147,7 @@
         echo ' Сегодня '.  $wether2 . ' и ' . $temperature2 ;
 
         ?>
-        <br><i> Ещё пример:  </i><br>
-        <?php
 
-        $iinc = include(__DIR__ . '/inc2_1.php');
-        var_dump($iinc);
-
-        ?>
 
         <br><br><i> Если включение происходит внутри функции включающего файла, то весь код, содержащийся во включаемом файле, будет вести себя так, как будто он определён внутри этой функции.
             Исключением являются так называемые волшебные константы (например __DIR__)
