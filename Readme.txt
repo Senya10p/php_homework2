@@ -2,6 +2,7 @@
 Файлы inc1.php, inc2.php, inc2-1.php, inc3.php, inc4.php - это включаемые файлы для задания 3.
 Файл functions1.php содержит функцию для задания 4.
 
+
 <html>
 	<head>
 		<title>PHP-1</title>
@@ -77,10 +78,9 @@
         $bb = 5;
         $cc = 2;
 
-        $result = D($aa, $bb, $cc);
+
 
         //Функция вычисления дискрименанта
-        //  const A = 2
 
         function D($aa, $bb, $cc) {
 

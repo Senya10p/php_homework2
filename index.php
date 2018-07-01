@@ -74,10 +74,9 @@
         $bb = 5;
         $cc = 2;
 
-        $result = D($aa, $bb, $cc);
+
 
         //Функция вычисления дискрименанта
-        //  const A = 2
 
         function D($aa, $bb, $cc) {
 
